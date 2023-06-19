@@ -11,7 +11,7 @@ def debug():
     execute_from_command_line([
         "manage.py",
         "runserver",
-        "--no_reload"
+        "--noreload"
     ])
 
 
@@ -23,5 +23,5 @@ def pytest():
 
 
 if __name__ == '__main__':
-    pytest()
+    debug()
 

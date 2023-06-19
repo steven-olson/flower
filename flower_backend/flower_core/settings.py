@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 INSTALLED_APPS = [
     'django.contrib.messages',
@@ -14,6 +14,9 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'django_extensions',
+    'snippets',
     'flower_web.apps.FlowerWebConfig',
     'flower_testing.apps.FlowerTestingConfig',
     'flower_admin.apps.FlowerAdminConfig',
@@ -21,9 +24,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -60,6 +63,12 @@ DATABASES = {
         'PORT': '7777',
     }
 }
+
+REST_FRAMEWORK = {
+
+}
+
+STATIC_ROOT = f"{BASE_DIR}/static"
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
