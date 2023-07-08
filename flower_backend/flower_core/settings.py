@@ -9,6 +9,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 INSTALLED_APPS = [
+    "daphne",
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -20,7 +21,9 @@ INSTALLED_APPS = [
     'flower_web.apps.FlowerWebConfig',
     'flower_testing.apps.FlowerTestingConfig',
     'flower_admin.apps.FlowerAdminConfig',
-    'flower_data'
+    'flower_data',
+    'flower_health_checks',
+    'chat'
 ]
 
 MIDDLEWARE = [
@@ -51,13 +54,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'flower_core.wsgi.application'
+# WSGI_APPLICATION = 'flower_core.wsgi.application'
+ASGI_APPLICATION = "flower_core.asgi.application"
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'flower_db',
-        'USER': 'steven',
+        'USER': 'postgres',
         'PASSWORD': 'ass',
         'HOST': 'localhost',
         'PORT': '7777',

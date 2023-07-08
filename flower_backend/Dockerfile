@@ -1,6 +1,8 @@
 # pull official base image
 FROM python:3.10.12-bullseye
 
+COPY ./requirements.txt /requirements.txt
+
 # set work directory
 WORKDIR /usr/src/app
 

@@ -6,3 +6,5 @@ venv/
 node_modules/
 __pycache__/
 __py_cache__/
+dump
+*.rdb

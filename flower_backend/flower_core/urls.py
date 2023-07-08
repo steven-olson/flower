@@ -14,5 +14,11 @@ urlpatterns = [
     path('snippets/', include('snippets.urls')),
 
     # goal stuff
-    path('api/', include('flower_web.urls'))
+    path('api/', include('flower_web.urls')),
+
+    # does stuff work
+    path('health_checks/', include('flower_health_checks.urls')),
+
+    # chat stuff
+    path("chat/", include("chat.urls")),
 ]
